@@ -1,0 +1,29 @@
+{
+  "name": "vaultx-playwright-regression",
+  "version": "1.0.0",
+  "description": "VaultX Regression Suite — Playwright + POM (JavaScript)",
+  "scripts": {
+    "test":            "playwright test",
+    "test:chromium":   "playwright test --project=chromium",
+    "test:firefox":    "playwright test --project=firefox",
+    "test:webkit":     "playwright test --project=webkit",
+    "test:edge":       "playwright test --project=edge",
+    "test:login":      "playwright test tests/01-login.spec.js",
+    "test:2fa":        "playwright test tests/02-2fa.spec.js",
+    "test:dashboard":  "playwright test tests/03-dashboard.spec.js",
+    "test:send":       "playwright test tests/04-transfer-send.spec.js",
+    "test:receive":    "playwright test tests/05-transfer-receive.spec.js",
+    "test:history":    "playwright test tests/06-history.spec.js",
+    "test:nav":        "playwright test tests/07-navigation.spec.js",
+    "test:api":        "playwright test tests/08-api.spec.js",
+    "test:a11y":       "playwright test tests/09-accessibility.spec.js",
+    "test:xbrowser":   "playwright test tests/10-cross-browser.spec.js",
+    "report":          "playwright show-report",
+    "ci:test:firefox": "sh -c 'start-server-and-test \"${START_CMD:-npm start}\" http://localhost:3000/ \"npm run test:firefox\"'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "start-server-and-test": "^1.14.0",
+    "wait-on": "^7.0.1"
+  }
+}
